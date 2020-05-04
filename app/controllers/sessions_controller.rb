@@ -2,10 +2,10 @@
 
 class SessionsController < ApplicationController
   def create
-    render plain: 'created!'
+    render json: { data: 'created!' }
   end
 
   def destroy
-    render plain: 'destroyed!'
+    render json: { data: 'destroyed!' }
   end
 end
