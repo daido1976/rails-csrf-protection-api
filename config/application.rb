@@ -35,5 +35,11 @@ module RailsCsrfProtectionApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Added middleware manually.
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CacheStore
+    # これによって session id が暗号化される？
+    config.middleware.use ActionDispatch::ContentSecurityPolicy::Middleware
   end
 end
