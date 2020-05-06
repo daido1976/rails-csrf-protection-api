@@ -2,6 +2,8 @@
 
 class SessionsController < ApplicationController
   def create
+    Rails.logger.info("session[:user_id] => #{session[:user_id]}")
+    session[:user_id] = 'hoge_id'
     render json: { data: 'created!' }
   end
 
