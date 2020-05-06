@@ -42,4 +42,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Allow ngrok access.
+  # ngrok assigns random hexadecimal names to the HTTP tunnels.
+  # `\h` is ruby's hexadecimal shorthand to equivalent [0-9a-fA-F]
+  # see https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html#string
+  config.hosts << /\h+.ngrok.io/
 end
